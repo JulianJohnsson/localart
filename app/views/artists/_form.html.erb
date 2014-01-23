@@ -1,0 +1,11 @@
+<%= simple_form_for(@artist, html: {class: "form-default"}) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name, autofocus: true %>
+  <%= f.input :email, as: :email %>
+  <%= f.input :password, as: :password %>
+  <%= f.input :place %>
+  <%= f.input :art_piece %>
+  <%= f.input :art_piece_price, as: :decimal %>
+  <%= f.button :submit, "Submit", class: "btn btn-primary" %>
+<% end %>
+

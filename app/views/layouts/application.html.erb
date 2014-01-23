@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Local Art" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Local Art" %>">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main" class="hp">
+      <div class="container">
+        <!--<div class="content"> !-->
+          <div class="row">
+            <div class="col-lg-12 column">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
+          </div>
+        <!--</div>!-->
+      </div>
+    </main>
+    <div class="footer">
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
+</html>

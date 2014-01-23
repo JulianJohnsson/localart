@@ -1,0 +1,21 @@
+<% content_for :title do %>Sign Up for Local Art<% end %>
+<% content_for :description do %>Sign up to access Local Art beta release<% end %>
+<div class="container">
+	<div class="row" style="margin-top: 100px; margin-bottom: 300px;">
+		<div class="col-sm-7 col-sm-offset-3 column hp-layer">
+			<h1>Welcome to Local Art !</h1>
+			<p>
+				Sign up to receive a priority access for the BETA release.
+			</p>
+				<%= simple_form_for(@visitor, html: {class: "form-inline"}) do |f| %>
+					<%= f.error_notification %>
+					<%= f.input :email, label: false, :placeholder => 'Your email adress...' %>
+					<%= f.submit "Go !", :class => "btn btn-primary" %>
+				<% end %>
+		</div>
+	</div>
+</div>
+
+
+
+

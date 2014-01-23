@@ -1,0 +1,6 @@
+<%= simple_form_for(:session, url: '/sessions/create') do |f| %>
+	<%= f.input :email, as: :email %>
+	<%= f.input :password, as: :password %>
+	<%= f.button :submit, "Login", class: "btn btn-primary" %>
+<% end %>
+

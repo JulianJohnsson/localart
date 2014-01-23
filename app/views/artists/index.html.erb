@@ -1,0 +1,41 @@
+<h1>Listing artists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password hash</th>
+      <th>Place</th>
+      <th>Art piece</th>
+      <th>Art piece price</th>
+      <th>Wepay access token</th>
+      <th>Wepay account</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @artists.each do |artist| %>
+      <tr>
+        <td><%= artist.name %></td>
+        <td><%= artist.email %></td>
+        <td><%= artist.password_hash %></td>
+        <td><%= artist.place %></td>
+        <td><%= artist.art_piece %></td>
+        <td><%= artist.art_piece_price %></td>
+        <td><%= artist.wepay_access_token %></td>
+        <td><%= artist.wepay_account_id %></td>
+        <td><%= link_to 'Show', artist %></td>
+        <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
+        <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Artist', new_artist_path %>

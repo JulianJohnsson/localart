@@ -1,0 +1,18 @@
+development :
+  adapter: postgresql
+  encoding: unicode
+  database: store_development
+  pool: 5
+  username: julienjanson
+  password: 
+
+test :
+  adapter: postgresql
+  encoding: unicode
+  database: store_development
+  pool: 5
+  username: julienjanson
+  password: 
+
+production :
+  adapter: postgresql
