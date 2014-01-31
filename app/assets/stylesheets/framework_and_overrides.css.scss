@@ -41,6 +41,8 @@ img {
   @extend .col-md-6;
   @extend .text-center;
   }
+
+// FORMS
 .form {
   @extend .col-md-6;
   }
@@ -53,6 +55,10 @@ img {
   @extend .btn-primary;
   @extend .btn-lg;
   }
+#error_notification {
+  color: #f00;
+}
+
 // apply styles to HTML elements
 // to make views framework-neutral
 main {

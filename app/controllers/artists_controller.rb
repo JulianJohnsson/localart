@@ -37,9 +37,9 @@ class ArtistsController < ApplicationController
 
     if @artist.save
       session[:artist_id] = @artist.id
-      redirect_to @artist, notice: "Artist was successfully created."
+      redirect_to root_path, :notice => "Artist was successfully created."
     else
-      render :new
+      render "new"
     end
   end
 
@@ -48,7 +48,7 @@ class ArtistsController < ApplicationController
   def update
     respond_to do |format|
       if @artist.update(artist_params)
-        format.html { redirect_to @artist, notice: 'Artist was successfully updated.' }
+        format.html { redirect_to @artist, :notice => 'Artist was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -75,6 +75,6 @@ class ArtistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
-      params.require(:artist).permit(:name, :email, :password, :password_hash, :place, :art_piece, :art_piece_price, :wepay_access_token, :wepay_account_id)
+      params.require(:artist).permit(:name, :email, :password, :password_confirmation)
     end
 end

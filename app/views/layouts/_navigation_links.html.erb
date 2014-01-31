@@ -2,18 +2,18 @@
 
 <ul class="nav navbar-nav">
 	<li><%= link_to 'ABOUT', root_path %></li>
-<!--    <% if current_user %>
+    <% if current_user %>
 		<li>
-			<%= link_to 'LOGOUT', logout_path %>
+			<%= link_to 'LOGOUT', :logout, method: :post %>
 		</li>
 	<% else %>
 		<li>
 			<%= link_to 'REGISTER', new_artist_path %>
 		</li>
 		<li>
-			<%= link_to 'LOGIN', login_path %>
+			<%= link_to 'LOGIN', :login %>
 		</li>
 	<% end %>
-!-->
+
 </ul>
 

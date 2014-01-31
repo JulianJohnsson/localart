@@ -1,12 +1,18 @@
 Localart::Application.routes.draw do
-  get "sessions/new"
+  
+  root to: 'visitors#new'
+  
+  resources :artist_sessions
   resources :artists
   resources :visitors, only: [:new, :create]
-  root to: "visitors#new"
+  
   #session
-  get '/login' => 'sessions#new', :as => :login
-  get '/logout' => 'sessions#destroy', :as => :logout
-  post '/sessions/create' => 'sessions#create'
+  get 'login'   => "artist_sessions#new", :as => :login
+  post 'logout'  => "artist_sessions#destroy", :as => :logout
+
+  #get "register" => 'artists#new', :as => "register"
+  #post '/sessions/create' => 'sessions#create'
+  #get '/sessions/create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

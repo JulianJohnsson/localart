@@ -11,22 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115160606) do
+ActiveRecord::Schema.define(version: 20140131170359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "artists", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_hash"
-    t.string   "place"
-    t.string   "art_piece"
-    t.integer  "art_piece_price"
-    t.string   "wepay_access_token"
-    t.integer  "wepay_account_id"
+    t.string   "name",             null: false
+    t.string   "email",            null: false
+    t.string   "crypted_password", null: false
+    t.string   "salt",             null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "artists", ["email"], name: "index_artists_on_email", unique: true, using: :btree
 
 end
