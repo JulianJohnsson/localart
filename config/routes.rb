@@ -2,13 +2,17 @@ Localart::Application.routes.draw do
   
   root to: 'visitors#new'
   
-  resources :artist_sessions
-  resources :artists
+  resources :user_sessions
+  resources :users do
+    member do
+      get :activate
+    end
+  end
   resources :visitors, only: [:new, :create]
   
   #session
-  get 'login'   => "artist_sessions#new", :as => :login
-  post 'logout'  => "artist_sessions#destroy", :as => :logout
+  get 'login'   => "user_sessions#new", :as => :login
+  post 'logout'  => "user_sessions#destroy", :as => :logout
 
   #get "register" => 'artists#new', :as => "register"
   #post '/sessions/create' => 'sessions#create'

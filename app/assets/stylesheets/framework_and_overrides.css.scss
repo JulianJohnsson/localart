@@ -61,17 +61,27 @@ img {
 
 // apply styles to HTML elements
 // to make views framework-neutral
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -90px;
+    background-color: #fdf4ef;
+}
+
 main {
   @extend .container;
-  background-color: #fdf4ef;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
+  margin-top: 0px; // accommodate the navbar
   }
+
 
 section {
   @extend .row;
-  margin-top: 20px;
+  margin-top: 10px;
   }
 
 .navbar-nav {

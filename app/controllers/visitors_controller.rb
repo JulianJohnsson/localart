@@ -1,7 +1,8 @@
 class VisitorsController < ApplicationController
-  
+
   	def new
 		@visitor = Visitor.new
+		render 'visitors/new', :layout => 'special'
 	end
 
 	def create

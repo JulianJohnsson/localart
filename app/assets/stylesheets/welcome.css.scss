@@ -1,10 +1,17 @@
-main.hp {
-	background: image-url("background-11.png") no-repeat center fixed;
-  	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-  	}
+#wrap-hp {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -90px;
+    background-color: #fdf4ef;
+    background: image-url("background-11.png") no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 
 .hp-layer {
 	@extend column;

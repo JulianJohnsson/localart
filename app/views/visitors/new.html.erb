@@ -1,7 +1,7 @@
 <% content_for :title do %>Sign Up for Local Art<% end %>
 <% content_for :description do %>Sign up to access Local Art beta release<% end %>
 <div class="container">
-	<div class="row" style="margin-top: 100px; margin-bottom: 300px;">
+	<div class="row" style="margin-top: 100px; margin-bottom: 20px;">
 		<div class="col-sm-7 col-sm-offset-3 column hp-layer">
 			<h1>Welcome to Local Art !</h1>
 			<p>
@@ -9,7 +9,7 @@
 			</p>
 				<%= simple_form_for(@visitor, html: {class: "form-inline"}) do |f| %>
 					<%= f.error_notification %>
-					<%= f.input :email, label: false, :placeholder => 'Your email adress...' %>
+					<%= f.input :email, label: false, :placeholder => 'Your email...' %>
 					<%= f.submit "Go !", :class => "btn btn-primary" %>
 				<% end %>
 		</div>
